@@ -1,6 +1,8 @@
 import React , {Component } from 'react';   
 import {Text , View  } from 'react-native'; 
-import { Container, Header, Content, Footer, FooterTab, Button, Icon , Badge } from 'native-base';
+import { Container, Content, Footer, FooterTab, Button , Badge } from 'native-base';
+import {Icon } from 'react-native-elements'; 
+ 
 
 
 export default class Home extends Component {
@@ -9,11 +11,47 @@ export default class Home extends Component {
         return (
             <Container>
            
-            <Content />
-              <Footer>
-                <FooterTab>
-               
-                </FooterTab>
+             <Content />
+               <Footer>
+                 <FooterTab style = {{backgroundColor:'#fff',
+                                      borderTopColor:'#000', 
+                                      borderTopWidth:0.5 }}   >
+                     <Button>
+                       <Icon
+                       name='home'
+                       type='font-awesome'
+                       color='#000'
+                       onPress={() => console.log('hello')} />
+                     </Button>
+                     <Button>
+                       <Icon
+                       name='search'
+                       type='font-awesome'
+                       color='#000'
+                       onPress={() => console.log('hello')} />
+                     </Button>
+                      <Button>
+                       <Icon
+                       name='video-camera'
+                       type='font-awesome'
+                       color='#000'
+                       onPress={() => console.log('hello')} />
+                     </Button>
+                     <Button>
+                       <Icon
+                       name='bell'
+                       type='font-awesome'
+                       color='#000'
+                       onPress={() => console.log('hello')} />
+                     </Button>
+                     <Button>
+                       <Icon
+                       name='user'
+                       type='font-awesome'
+                       color='#000'
+                       onPress={() => console.log('hello')} />
+                     </Button>
+                 </FooterTab>
               </Footer>
             </Container>
         )
