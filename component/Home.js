@@ -21,35 +21,35 @@ export default class Home extends Component {
                        name='home'
                        type='font-awesome'
                        color='#000'
-                       onPress={() => console.log('hello')} />
+                       />
                      </Button>
                      <Button>
                        <Icon
                        name='search'
                        type='font-awesome'
                        color='#000'
-                       onPress={() => console.log('hello')} />
+                       />
                      </Button>
                       <Button>
                        <Icon
                        name='video-camera'
                        type='font-awesome'
                        color='#000'
-                       onPress={() => console.log('hello')} />
+                       />
                      </Button>
                      <Button>
                        <Icon
                        name='bell'
                        type='font-awesome'
                        color='#000'
-                       onPress={() => console.log('hello')} />
+                        />
                      </Button>
                      <Button>
                        <Icon
                        name='user'
                        type='font-awesome'
                        color='#000'
-                       onPress={() => console.log('hello')} />
+                        />
                      </Button>
                  </FooterTab>
               </Footer>
