@@ -1,6 +1,6 @@
 import React , {Component } from 'react';   
 import {Alert}  from 'react-native'; 
-import { Container, Content, Footer, FooterTab, Button , Badge } from 'native-base';
+import { Container, Content, Footer, FooterTab} from 'native-base';
 import {Icon } from 'react-native-elements'; 
 import { HeaderTab } from './HeaderComponent/header';
  
@@ -37,6 +37,8 @@ export default class Home extends Component {
         return (
             <Container>
              <HeaderTab  />  
+
+
              <Content />
                <Footer>
                  <FooterTab style = {{backgroundColor:'#fff' , 
