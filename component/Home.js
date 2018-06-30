@@ -2,8 +2,8 @@ import React , {Component } from 'react';
 import {Alert}  from 'react-native'; 
 import { Container, Content, Footer, FooterTab} from 'native-base';
 import {Icon } from 'react-native-elements'; 
-import { HeaderTab } from './HeaderComponent/header';
- 
+import { HeaderTab } from './HeaderComponent/header'; 
+import NewsFeedComp from './NewsfeedComponent/NewsFeed';
 
 
 export default class Home extends Component {
@@ -39,7 +39,8 @@ export default class Home extends Component {
              <HeaderTab  />  
 
 
-             <Content />
+               <NewsFeedComp/>
+
                <Footer>
                  <FooterTab style = {{backgroundColor:'#fff' , 
                                      justifyContent:'space-around'}}>
