@@ -2,7 +2,7 @@ import React from 'react';
 import {Icon} from 'react-native-elements'; 
 
 
-export default class LeftComp  extends React.Component{
+export default class SendComp extends React.Component{
   
     render()
     {
@@ -10,7 +10,7 @@ export default class LeftComp  extends React.Component{
 
             <Icon
             iconStyle={{fontSize:21}}
-            name='user-plus'
+            name='paper-plane'
             type='font-awesome'
             color='#000'
             />

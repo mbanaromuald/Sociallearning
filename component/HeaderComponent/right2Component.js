@@ -12,6 +12,7 @@ export default class Rig2tComp  extends React.Component{
         return (
 
             <Icon
+            iconStyle={{fontSize:21}}
             name='television'
             type='font-awesome'
             color='#000'

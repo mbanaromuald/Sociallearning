@@ -9,6 +9,7 @@ export default class CommentComp extends React.Component{
         return (
 
             <Icon
+            iconStyle={{fontSize:21}}
             name='comment'
             type='font-awesome'
             color='#000'

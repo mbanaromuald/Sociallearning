@@ -10,6 +10,7 @@ export default class RigtComp  extends React.Component{
         return (
 
             <Icon
+            iconStyle={{fontSize:21}}
             name='paper-plane'
             type='font-awesome'
             color='#000'

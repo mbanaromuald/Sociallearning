@@ -9,6 +9,7 @@ export default class LikesComp extends React.Component{
         return (
 
             <Icon
+            iconStyle={{fontSize:21}}
             name='heart'
             type='font-awesome'
             color='#000'

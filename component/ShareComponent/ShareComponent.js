@@ -8,8 +8,9 @@ export default class ShareComp extends React.Component{
     {
         return (
 
-            <Icon
-            name='share'
+            <Icon 
+            iconStyle={{fontSize:21}}
+            name='share-alt'
             type='font-awesome'
             color='#000'
             />

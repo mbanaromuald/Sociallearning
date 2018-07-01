@@ -1,19 +1,17 @@
 import React, {Component } from 'react'; 
+import {Icon} from 'react-native-elements'; 
+import {ListView, View, Text} from 'react-native'; 
 
-import {ListView} from 'react-native'; 
-
-import  { Container, 
+import  {
     Header, 
-    Content, 
     Card,
-    CardItem, 
-    Text, 
-    Button,  
+    CardItem,   
     Left, 
     Body, 
     Right , 
-    List , 
-    ListItem } from 'native-base'; 
+    Button,
+    Title
+   } from 'native-base'; 
 
 
 import {Image} from 'react-native'; 
@@ -22,8 +20,8 @@ import AvatarComp from '../AvatarComponent/AvatarComponent';
 import MoreMenuComp from '../MoreMenuComponent/MoreMenuComponent';
 import LikesComp from '../LikeComponent/LikeComponent';
 import CommentComp from '../CommentComponent/commentComponent';
-import RigtComp from '../HeaderComponent/rightComponent';
 import ShareComp from '../ShareComponent/ShareComponent';
+import SendComp from '../sendComponent/SendComp';
 
 
 
@@ -71,7 +69,9 @@ export default class NewsFeedComp extends Component {
 
             <ListView dataSource={this.state.dataSource}
                       renderRow= {this.renderCard} 
-                      style={{backgroundColor:"#f1f1f1"}}>
+                      style={{backgroundColor:"#f1f1f1"}}
+                      contentContainerStyle={{justifyContent:'space-between'}}
+                      renderHeader={this.renderHeader}>
                       
             
 
@@ -85,35 +85,93 @@ export default class NewsFeedComp extends Component {
     renderCard(cardInfo)
     {
      return(
-        <Card>
-        <CardItem bordered>
-            <Left>
-                <AvatarComp/>
-                <Text>{cardInfo.name}</Text>
-            </Left>
-            <Right>
-                <MoreMenuComp/>
-            </Right>
-        </CardItem>
-        <CardItem cardBody bordered >
-             <Image source={{uri:cardInfo.imageurl}} 
-             style={{height: 200, width: null, flex: 1}}/>
-        </CardItem>
-        <CardItem bordered >
-            <Left style={{justifyContent:'space-between'}}>
-                <LikesComp/>
-                <CommentComp/>
-                <RigtComp/>
-            </Left>
-            <Body>
-            </Body>
-            <Right>
-                <ShareComp/>
-            </Right>
-        </CardItem>
-    </Card>
+
+
+           <View style= {{backgroundColor:'#f1f1f1'}}>
+
+                 <Card>
+                   <CardItem bordered>
+                        <Left style={{justifyContent:'space-between'}} >
+                           <AvatarComp/>
+                           <Text style={{fontWeight:'bold', 
+                                         color:'#000', 
+                                         fontSize:14, 
+                                         marginLeft:10,
+                                          }} >{cardInfo.name}
+                            </Text>
+                        </Left>
+                        
+                        <Body/>
+
+                        <Right>
+                           <MoreMenuComp/>
+                       </Right>
+                   </CardItem>
+                   <CardItem cardBody bordered >
+                        <Image source={{uri:cardInfo.imageurl}} 
+                         style={{height: 350, width: null, flex: 1}}/>
+                    </CardItem>
+                   <CardItem bordered >
+                        <Left style={{justifyContent:'space-between'}}>
+                           <LikesComp/>
+                           <CommentComp/>
+                           <SendComp/>
+                        </Left>
+                        <Body/>
+                        <Right>
+                          <ShareComp/>
+                        </Right>
+                   </CardItem>
+                </Card>
+                
+           </View>
+      
+       
      )
 
+    }
+
+    renderHeader()
+    {
+        return(
+            <Header style={{borderBottomColor:'#f1f1f1' , 
+                            borderBottomWidth:0.8, 
+                            borderTopColor:'#f1f1f1', 
+                            borderTopWidth:0.8, 
+                            backgroundColor:'#fff'}} >
+
+                  <Left>
+                     <Icon
+                      iconStyle={{fontSize:20}}
+                      name='briefcase'
+                      type='font-awesome'
+                      color='#000'
+                      />
+                  </Left>
+                  <Body>
+                      
+                         <Button  bordered rounded dark 
+                                  style ={{width:200,
+                                           marginLeft:90, 
+                                           paddingLeft:30}} >
+                                   <Text style={{fontSize:12 
+                                                }}>
+                                                what are you doing now?
+                                    </Text>
+                         </Button>
+                      
+                  </Body>
+                  <Right>
+                     <Icon
+                      iconStyle={{fontSize:20}}
+                      name='hacker-news'
+                      type='font-awesome'
+                      color='#000'
+                      />
+                  
+                  </Right>
+            </Header>
+        )
     }
 
 
