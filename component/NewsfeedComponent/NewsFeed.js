@@ -26,6 +26,7 @@ import SendComp from '../sendComponent/SendComp';
 
 
 
+
 export default class NewsFeedComp extends Component {
 
 
@@ -40,12 +41,27 @@ export default class NewsFeedComp extends Component {
         const cardInfo= [
             {
                 "name": "Max Musteman", 
-                "imageurl":"https://scontent-frx5-1.xx.fbcdn.net/v/t31.0-8/24059649_760166427504814_2056107590989211898_o.jpg?_nc_cat=0&oh=5cadf8a524c276c87f4f78a0fd177a24&oe=5BE4E545"
+                "imageurl":"https://scontent-frx5-1.xx.fbcdn.net/v/t31.0-8/24059649_760166427504814_2056107590989211898_o.jpg?_nc_cat=0&oh=5cadf8a524c276c87f4f78a0fd177a24&oe=5BE4E545",
+                "post":"", 
+                "Comment":""
             } ,
 
             {
                 "name": "Pierre Moscovici", 
-                "imageurl":"https://scontent-frx5-1.xx.fbcdn.net/v/t31.0-8/16143461_614075545447237_6793707549122832067_o.jpg?_nc_cat=0&oh=2a5b5fb5b541566f31f3b55082eba8f6&oe=5BA0202E"
+                "imageurl":"https://scontent-frt3-1.xx.fbcdn.net/v/t1.0-9/16142294_614075542113904_936187153530390760_n.jpg?_nc_cat=0&oh=d8568f0a387a75f708f6ae704f7e08c7&oe=5BA0FFF1", 
+                "post":"", 
+                "Comment":""
+            },
+            {
+                "name": "Emmanuel Edimo", 
+                "post":"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
+                "Comment":""
+            }, 
+            {
+                "name":"Edimo Nkoe",
+                "imageurl":"https://scontent-frt3-1.xx.fbcdn.net/v/t1.0-9/16142294_614075542113904_936187153530390760_n.jpg?_nc_cat=0&oh=d8568f0a387a75f708f6ae704f7e08c7&oe=5BA0FFF1", 
+                "post":"", 
+                "Comment":"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
             }
         ]
 
@@ -90,7 +106,7 @@ export default class NewsFeedComp extends Component {
            <View style= {{backgroundColor:'#f1f1f1'}}>
 
                  <Card>
-                   <CardItem bordered>
+                   <CardItem>
                         <Left style={{justifyContent:'space-between'}} >
                            <AvatarComp/>
                            <Text style={{fontWeight:'bold', 
@@ -107,11 +123,23 @@ export default class NewsFeedComp extends Component {
                            <MoreMenuComp/>
                        </Right>
                    </CardItem>
-                   <CardItem cardBody bordered >
+
+                   <CardItem>
+                           <Text style={{color:'#000',
+                                         textAlign:'justify' }} > {cardInfo.Comment} </Text>
+                   </CardItem>
+                  
+                   <CardItem cardBody >
                         <Image source={{uri:cardInfo.imageurl}} 
                          style={{height: 350, width: null, flex: 1}}/>
                     </CardItem>
-                   <CardItem bordered >
+
+                    <CardItem cardBody >
+                         <Text  style={{color:'#000',
+                                        marginLeft:10, 
+                                        textAlign:'justify'}} >{cardInfo.post}</Text>
+                    </CardItem>
+                   <CardItem>
                         <Left style={{justifyContent:'space-between'}}>
                            <LikesComp/>
                            <CommentComp/>
