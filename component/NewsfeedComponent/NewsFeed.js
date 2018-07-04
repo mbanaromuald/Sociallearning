@@ -159,48 +159,6 @@ export default class NewsFeedComp extends Component {
 
     }
 
-    renderHeader()
-    {
-        return(
-            <Header style={{borderBottomColor:'#f1f1f1' , 
-                            borderBottomWidth:0.8, 
-                            borderTopColor:'#f1f1f1', 
-                            borderTopWidth:0.8, 
-                            backgroundColor:'#fff'}} >
-
-                  <Left>
-                     <Icon
-                      iconStyle={{fontSize:20}}
-                      name='briefcase'
-                      type='font-awesome'
-                      color='#000'
-                      />
-                  </Left>
-                  <Body>
-                      
-                         <Button  bordered rounded dark 
-                                  style ={{width:200,
-                                           marginLeft:90, 
-                                           paddingLeft:30}} >
-                                   <Text style={{fontSize:12 
-                                                }}>
-                                                what are you doing now?
-                                    </Text>
-                         </Button>
-                      
-                  </Body>
-                  <Right>
-                     <Icon
-                      iconStyle={{fontSize:20}}
-                      name='hacker-news'
-                      type='font-awesome'
-                      color='#000'
-                      />
-                  
-                  </Right>
-            </Header>
-        )
-    }
-
+   
 
 }

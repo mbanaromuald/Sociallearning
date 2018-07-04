@@ -33,7 +33,7 @@ export class HeaderTab extends Component {
         return(
             
             <Header style= {{backgroundColor:'#fff', 
-                            borderBottomColor:'#f1f1f1', 
+                            borderBottomColor:'#8C8C8C', 
                             borderBottomWidth:1}} >
               <Left>
                     <CenterComp/>
