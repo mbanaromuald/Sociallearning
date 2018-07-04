@@ -1,6 +1,5 @@
 import React, {Component} from 'react'; 
 import {Alert} from 'react-native'; 
-import LeftComp from './leftComponent';
 import CenterComp from './centerComponent';
 import RigtComp from './rightComponent';
 import { Header, Left, Body, Right, Button} from 'native-base';
@@ -15,7 +14,7 @@ export class HeaderTab extends Component {
 
     getTelevision()
     {
-        Alert.alert('Television showed')
+        Alert.alert('Camera showed')
     }
 
     addUser()
@@ -33,14 +32,13 @@ export class HeaderTab extends Component {
     render(){
         return(
             
-            <Header style= {{backgroundColor:'#fff'}} >
+            <Header style= {{backgroundColor:'#fff', 
+                            borderBottomColor:'#f1f1f1', 
+                            borderBottomWidth:1}} >
               <Left>
-                 <Button transparent onPress={()=>this.addUser()} >
-                    <LeftComp/>
-                 </Button>
+                    <CenterComp/>
               </Left>
               <Body>
-                   <CenterComp/>
               </Body>
               <Right>
                  <Button transparent  onPress={()=>this.getTelevision()} >

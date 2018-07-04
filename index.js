@@ -1,7 +1,6 @@
 import { AppRegistry } from 'react-native';
+import Main from './component/main';
 
 
-import Home from './component/Home';
 
-
-AppRegistry.registerComponent('sociallearning', () => Home);
+AppRegistry.registerComponent('sociallearning', () => Main);
