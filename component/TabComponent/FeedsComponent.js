@@ -14,6 +14,8 @@ import  {
     Body, 
     Right ,  
     Container, 
+    Header, 
+    Button,
     Content
    } from 'native-base'; 
 
