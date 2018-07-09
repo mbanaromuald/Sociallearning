@@ -9,7 +9,7 @@ export default class MoreMenuComp  extends React.Component{
         return (
 
             <Icon
-            iconStyle={{fontSize:21}}
+            iconStyle={{fontSize:18}}
             name='ellipsis-v'
             type='font-awesome'
             color='#000'

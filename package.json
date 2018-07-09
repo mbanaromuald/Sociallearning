@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest"
+    "test": "jest", 
+    "android-linux":"react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res"
   },
   "dependencies": {
     "native-base": "^2.6.1",
@@ -13,13 +14,15 @@
     "react-native-base": "^1.1.0",
     "react-native-elements": "^0.19.1",
     "react-native-vector-icons": "^4.6.0",
+    "react-native-windows": "0.55.0-rc.0",
     "react-navigation": "^2.5.5"
   },
   "devDependencies": {
     "babel-jest": "22.4.3",
     "babel-preset-react-native": "4.0.0",
     "jest": "22.4.3",
-    "react-test-renderer": "16.3.1"
+    "react-test-renderer": "16.3.1",
+    "rnpm-plugin-windows": "^0.2.8"
   },
   "jest": {
     "preset": "react-native"
