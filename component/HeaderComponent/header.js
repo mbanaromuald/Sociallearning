@@ -56,7 +56,6 @@ export class HeaderTab extends Component {
                 <Button transparent onPress={()=> this.sendMessage()} >
                      <RigtComp />
                 </Button>
-
              </Right>
           </Header>
 

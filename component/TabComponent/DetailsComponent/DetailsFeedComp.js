@@ -17,7 +17,7 @@ import  {
  import { HeaderTab  } from "../../HeaderComponent/header"
 
 
-import {Image, SectionList} from 'react-native'
+import {Image, SectionList , View} from 'react-native'
 import {Avatar, Icon} from 'react-native-elements'
 import MoreMenuComp from '../../MoreMenuComponent/MoreMenuComponent'
 import CardInfo from '../InfoFeedComponent/infoFeed'
@@ -29,46 +29,20 @@ export default class DetailsFeedComponent extends Component {
 
   renderHeader()
   {
-      return(
-          <Header style={{borderBottomColor:'#f1f1f1' , 
-                          borderBottomWidth:0.8, 
-                          borderTopColor:'#f1f1f1', 
-                          borderTopWidth:0.8, 
-                          backgroundColor:'#fff'}} >
+      return(  
+            
+                   <View style={{flexDirection:'row',
+                                  backgroundColor:'#fff',
+                                  height:50,
+                                  elevation:3, 
+                                  justifyContent:'center'
+                                    
+                                 }} >
 
-                <Left>
-                   <Icon
-                    iconStyle={{fontSize:20}}
-                    name='briefcase'
-                    type='font-awesome'
-                    color='#000'
-                    />
-                </Left>
-                <Body>
+                                 <Text> this is a Header </Text>
                     
-                       <Button transparent 
-                                style ={{width:200,
-                                         marginLeft:90, 
-                                         paddingLeft:30}} >
-                                 <Text style={{fontSize:8, 
-                                               color:'#000'
-                                               
-                                              }}>
-                                              what are you doing now?
-                                  </Text>
-                       </Button>
-                    
-                </Body>
-                <Right>
-                   <Icon
-                    iconStyle={{fontSize:20}}
-                    name='hacker-news'
-                    type='font-awesome'
-                    color='#000'
-                    />
-                
-                </Right>
-          </Header>
+                    </View>
+             
       )
   }
 
@@ -105,7 +79,8 @@ export default class DetailsFeedComponent extends Component {
                                                                         </Right>
                                                                      </CardItem>
                                                                      <CardItem cardBody>
-                                                                           <Text style={{textAlign:'center'}}
+                                                                           <Text style={{textAlign:'center' ,
+                                                                                        }}
                                                                            > {item.post}
                                                                            </Text>
                                                                      </CardItem>
