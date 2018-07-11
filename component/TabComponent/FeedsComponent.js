@@ -1,13 +1,15 @@
 import React , {Component} from 'react'
-import DetailsFeedComponent from '../TabComponent/DetailsComponent/DetailsFeedComp'
 import { createStackNavigator } from 'react-navigation'
-import {Icon } from 'react-native-elements'
+
+
+
+import { Icon} from 'react-native-elements'
+import DetailsFeedStack from './DetailsComponent/DetailFeedComponent/DetailFeedComponent';
 
 
 
 
-
-export default class FeedComponent extends Component {
+export default  class FeedComponent extends Component {
 
 
    
@@ -40,19 +42,22 @@ export default class FeedComponent extends Component {
 
 
   render(){
-    return(
-          <StackNavitor/>
+    return( 
+
+         <FeedStackNavitor/>
     )
   }
 }
 
 
-const StackNavitor = createStackNavigator(
+const FeedStackNavitor = createStackNavigator(
   {
-      Details : DetailsFeedComponent 
+     Home: DetailsFeedStack
+  
   }, 
   {
-    headerMode: 'none'
+    headerMode: 'none', 
+ 
   }
   
 )
