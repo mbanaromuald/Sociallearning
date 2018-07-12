@@ -20,7 +20,6 @@ export default class CenterComp extends React.Component{
             size="large"
             rounded
             source={{uri: "https://s3.amazonaws.com/uifaces/faces/twitter/kfriedson/128.jpg"}}
-            onPress={() => this.showImage() }
             activeOpacity={0.7}
              />
 

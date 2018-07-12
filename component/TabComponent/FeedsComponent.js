@@ -56,8 +56,7 @@ const FeedStackNavitor = createStackNavigator(
   
   }, 
   {
-    headerMode: 'none', 
- 
+    headerMode:'none'
   }
-  
+
 )

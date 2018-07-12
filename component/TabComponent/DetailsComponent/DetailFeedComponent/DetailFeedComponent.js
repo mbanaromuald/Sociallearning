@@ -1,6 +1,6 @@
 import React , {Component} from 'react'
-import {Avatar, Icon} from 'react-native-elements'
-import {Image, SectionList , View, Alert } from 'react-native'
+import {Avatar, Icon,} from 'react-native-elements'
+import {Image, SectionList , View} from 'react-native'
 import  {
   
     Card,
@@ -10,27 +10,74 @@ import  {
     Container,  
     Button,
     Content, 
-    Text
+    Text, 
+    Header
    } from 'native-base'
    import { createStackNavigator } from 'react-navigation'
 
-   import {HeaderTab}  from '../../../HeaderComponent/header'
-   import MoreMenuComp from '../../../MoreMenuComponent/MoreMenuComponent'
-   import CardInfo from '../../InfoFeedComponent/infoFeed'
-   import PostComp from '../ChildFeedComponent/postFormComp';
+  
+import MoreMenuComp from '../../../MoreMenuComponent/MoreMenuComponent'
+import CardInfo from '../../InfoFeedComponent/infoFeed'
+import PostComp from '../ChildFeedComponent/postFormComp';
+import NewsComponent from '../ChildFeedComponent/NewsComp';
+import JobsAlertComponent from '../ChildFeedComponent/JobsAlertComp';
+import ForumComp from '../ChildFeedComponent/ForumComp';
+import CameraComp from '../ChildFeedComponent/KameraComp';
+import MessageComp from '../ChildFeedComponent/Message';
 
 class DetailsFeedComponent extends Component {
+  
+  
     render(){
-        return (
-
-
-                                      
+        return (                                 
  <Container>
-    <HeaderTab/>
- 
- 
-    <Content>
 
+      <Header style ={{backgroundColor:'#fff', 
+                     height:50, 
+                     borderBottomColor:'#f1f1f1', 
+                     borderBottomWidth:0.8,
+                     elevation:3 , 
+                     paddingHorizontal:15, 
+                     justifyContent:'space-between', 
+                     alignItems:'center'
+                      }} >
+
+                          <Avatar style={{marginLeft:15}}
+                          size="large"
+                          rounded
+                          source={{uri: "https://s3.amazonaws.com/uifaces/faces/twitter/kfriedson/128.jpg"}}
+                          activeOpacity={0.7}
+                          /> 
+
+                           <View   style={{flexDirection:'row'
+                                          }}   >
+                                       <Button transparent onPress ={()=>this.props.navigation.navigate('Kamera')}>  
+                                             <Icon
+                                             iconStyle={{fontSize:18}}
+                                             name='video-camera'
+                                             type='font-awesome'
+                                             color='#000'/>
+                                       </Button>
+                                       <Button transparent  onPress ={()=>this.props.navigation.navigate('Forum')}>
+                                             <Icon
+                                             iconStyle={{fontSize:18}}
+                                             name='users'
+                                             type='font-awesome'
+                                             color='#000'/>
+                                      </Button>
+                                      <Button transparent   onPress ={()=>this.props.navigation.navigate('Message')}>
+                                             <Icon
+                                             iconStyle={{fontSize:18}}
+                                             name='paper-plane'
+                                             type='font-awesome'
+                                             color='#000' />
+                                      </Button>
+                          </View>
+
+
+       </Header>
+
+    <Content>
            <SectionList
            renderItem = {({ item })=>
           
@@ -95,6 +142,7 @@ class DetailsFeedComponent extends Component {
                                                               name='briefcase'
                                                               type='font-awesome'
                                                               color='#000'
+                                                              onPress={()=>this.props.navigation.navigate('JobsAlert')}
                                                               />
 
 
@@ -108,6 +156,7 @@ class DetailsFeedComponent extends Component {
                                                                name='hacker-news'
                                                                type='font-awesome'
                                                                color='#000'
+                                                               onPress={()=>this.props.navigation.navigate('NewsPage')}
                                                                  />
 
 
@@ -116,8 +165,6 @@ class DetailsFeedComponent extends Component {
     
 
     </Content>
-
-
 </Container>
         )
     }
@@ -127,7 +174,12 @@ class DetailsFeedComponent extends Component {
 const DetailsFeedStack = createStackNavigator(
     {
         Details : DetailsFeedComponent, 
-        PostPage : PostComp
+        PostPage : PostComp ,
+        NewsPage: NewsComponent, 
+        JobsAlert: JobsAlertComponent, 
+        Forum: ForumComp, 
+        Kamera: CameraComp, 
+        Message: MessageComp
     }, 
     {
         headerMode:'none', 

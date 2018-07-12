@@ -30,4 +30,5 @@ const  BottomTabNavigator = createBottomTabNavigator({
     feed: FeedComponent, 
     notification: NotificationComponent, 
     profile: ProfileComponent
-})
+}
+)
