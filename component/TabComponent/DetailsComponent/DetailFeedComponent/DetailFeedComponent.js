@@ -24,6 +24,7 @@ import JobsAlertComponent from '../ChildFeedComponent/JobsAlertComp';
 import ForumComp from '../ChildFeedComponent/ForumComp';
 import CameraComp from '../ChildFeedComponent/KameraComp';
 import MessageComp from '../ChildFeedComponent/Message';
+import PostFeed from '../../InfoFeedComponent/infoPostFeed';
 
 class DetailsFeedComponent extends Component {
   
@@ -88,7 +89,6 @@ class DetailsFeedComponent extends Component {
                                                       size="large"
                                                       rounded
                                                       source={{uri:item.avatarImg}}
-                                                      onPress={() => this.showImage() }
                                                       activeOpacity={0.7}
                                                     />
                                                    <Text style={{color:'#000'}}>
@@ -98,12 +98,6 @@ class DetailsFeedComponent extends Component {
                                                 <Right>
                                                     <MoreMenuComp/>
                                                 </Right>
-                                             </CardItem>
-                                             <CardItem cardBody>
-                                                   <Text style={{textAlign:'center' ,
-                                                                }}
-                                                   > {item.post}
-                                                   </Text>
                                              </CardItem>
                                              <CardItem>
                                                  <Image source={{uri:item.imageurl}} 
@@ -162,6 +156,37 @@ class DetailsFeedComponent extends Component {
 
                                            </View> }
           />
+
+              <SectionList renderItem={({item})=>
+              
+                                    <Card transparent>
+                                            <CardItem>
+                                                <Left>
+                                                    <Avatar 
+                                                      size="large"
+                                                      rounded
+                                                      source={{uri:item.avatarImg}}
+                                                      activeOpacity={0.7}
+                                                    />
+                                                   <Text style={{color:'#000'}}>
+                                                     {item.name}
+                                                   </Text>
+                                                </Left>
+                                                <Right>
+                                                    <MoreMenuComp/>
+                                                </Right>
+                                            </CardItem>
+                                            <CardItem cardBody>
+                                                  <Text style={{textAlign:'center'}} >{item.post}</Text>
+                                            </CardItem>
+                                            <CardItem>
+                                                  <Text note>{item.timing}</Text>
+                                            </CardItem>
+                                   </Card> }
+              
+              sections={PostFeed}
+              keyExtractor={(item, index) => item + index}
+              />
     
 
     </Content>
