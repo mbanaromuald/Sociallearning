@@ -1,22 +1,14 @@
 import React , {Component} from 'react'
 import {Avatar, Icon,} from 'react-native-elements'
-import {Image, SectionList , View} from 'react-native'
+import {Image, SectionList , View, Text} from 'react-native'
 import  {
-  
-    Card,
-    CardItem,   
-    Left, 
-    Right ,  
-    Container,  
-    Button,
-    Content, 
-    Text, 
-    Header
+    Button, 
+    Thumbnail
    } from 'native-base'
    import { createStackNavigator } from 'react-navigation'
 
   
-import MoreMenuComp from '../../../MoreMenuComponent/MoreMenuComponent'
+
 import CardInfo from '../../InfoFeedComponent/infoFeed'
 import PostComp from '../ChildFeedComponent/postFormComp';
 import NewsComponent from '../ChildFeedComponent/NewsComp';
@@ -31,35 +23,35 @@ class DetailsFeedComponent extends Component {
   
     render(){
         return (                                 
- <Container>
+ <View style={{flex:1 , backgroundColor:'#f1f1f1'}} >
 
-      <Header style ={{backgroundColor:'#fff', 
+      <View style ={{backgroundColor:'#fff', 
                      height:50, 
                      borderBottomColor:'#f1f1f1', 
                      borderBottomWidth:0.8,
                      elevation:3 , 
                      paddingHorizontal:15, 
                      justifyContent:'space-between', 
-                     alignItems:'center'
+                     alignItems:'center', 
+                     flexDirection:'row'
                       }} >
 
-                          <Avatar style={{marginLeft:15}}
-                          size="large"
-                          rounded
-                          source={{uri: "https://s3.amazonaws.com/uifaces/faces/twitter/kfriedson/128.jpg"}}
-                          activeOpacity={0.7}
-                          /> 
+                        
+                        <Thumbnail small source={{uri: "https://s3.amazonaws.com/uifaces/faces/twitter/kfriedson/128.jpg"}} /> 
 
-                           <View   style={{flexDirection:'row'
-                                          }}   >
-                                       <Button transparent onPress ={()=>this.props.navigation.navigate('Kamera')}>  
+                           <View  style={{flexDirection:'row',
+                                          justifyContent:'space-between', 
+                                               }}>
+                                       <Button transparent onPress ={()=>this.props.navigation.navigate('Kamera')}
+                                       style={{marginRight:15}} >  
                                              <Icon
                                              iconStyle={{fontSize:18}}
                                              name='video-camera'
                                              type='font-awesome'
                                              color='#000'/>
                                        </Button>
-                                       <Button transparent  onPress ={()=>this.props.navigation.navigate('Forum')}>
+                                       <Button transparent  onPress ={()=>this.props.navigation.navigate('Forum')}
+                                       style={{marginRight:15}}>
                                              <Icon
                                              iconStyle={{fontSize:18}}
                                              name='users'
@@ -76,49 +68,72 @@ class DetailsFeedComponent extends Component {
                           </View>
 
 
-       </Header>
+       </View>
 
-    <Content>
+    <View style ={{flex:1 , backgroundColor:'#f1f1f1'}} >
            <SectionList
            renderItem = {({ item })=>
           
-                                        <Card transparent>
-                                             <CardItem>
-                                                <Left>
-                                                    <Avatar 
-                                                      size="large"
-                                                      rounded
-                                                      source={{uri:item.avatarImg}}
-                                                      activeOpacity={0.7}
-                                                    />
-                                                   <Text style={{color:'#000'}}>
-                                                     {item.name}
-                                                   </Text>
-                                                </Left>
-                                                <Right>
-                                                    <MoreMenuComp/>
-                                                </Right>
-                                             </CardItem>
-                                             <CardItem cardBody>
-                                                  <Text style={{textAlign:'center'}} >{item.post}</Text>
-                                            </CardItem>
-                                             <CardItem>
+                                        <View style={{flexDirection:'column',
+                                                     backgroundColor:'#fff' , 
+                                                     marginTop:10}} >
+                                            
+                                             
+
+                                                 <View style={{flexDirection:'row',
+                                                              height:55,
+                                                              paddingHorizontal:15,
+                                                              justifyContent:'space-between', 
+                                                              alignItems:'center'  }} >
+
+                                                              <View style={{flexDirection:'row'}}>
+
+                                                                    <Thumbnail small source={{uri:item.avatarImg}}/>
+                                                                    <Text style={{color:'#000', 
+                                                                                  marginLeft:4,
+                                                                                  fontSize:14 }}>
+                                                                            {item.name}
+                                                                      </Text>
+                                                 
+                                                               </View>
+                                                                                           
+                                                               <Icon
+                                                               iconStyle={{fontSize:18}}
+                                                               name='ellipsis-v'
+                                                               type='font-awesome'
+                                                               color='#000'
+                                                                 />
+
+
+                                                 </View>
+                      
+                                                 <View style={{alignItems:'center'}} >
+                                                       <Text style={{textAlign:'center', color:'#000' , fontSize:17}} >{item.post}</Text>
+                                                </View>
+                                             <View style={{padding:15}} >
                                                  <Image source={{uri:item.imageurl}} 
                                                   style={{height: 200, width: null, flex: 1}}/>
-                                             </CardItem>
-                                             <CardItem>
+                                             </View>
+                                             <View style={{flexDirection:'column',
+                                                          paddingHorizontal:15,
+                                                          alignItems:'flex-start'}} >
                                                   <Text style={{color:'#000',
-                                                                fontWeight:'bold', 
+                                                                textAlign:'justify', 
                                                                 fontSize:17, 
-                                                                marginLeft:15, 
-                                                                marginRight:15 }} >
+                                                                
+                                                                }} >
                                                       {item.description}
                                                   </Text>
-                                             </CardItem>
-                                             <CardItem>
-                                                   <Text note>{item.timing}</Text>
-                                             </CardItem>
-                                        </Card>
+
+                                                  <Text style={{color:'#808080',
+                                                                textAlign:'left', 
+                                                                fontSize:14}} >{item.timing}</Text>
+
+                                             </View>
+                                            
+                                                   
+                                           
+                                        </View>
           
            
           
@@ -130,8 +145,9 @@ class DetailsFeedComponent extends Component {
                                                        height:50,
                                                        elevation:3, 
                                                        paddingHorizontal:15,
-                                                       justifyContent:'space-between'
-
+                                                       justifyContent:'space-between', 
+                                                       borderBottomColor:'#f1f1f1', 
+                                                       borderBottomWidth:1
                                                         }} >
 
                                                              <Icon
@@ -163,8 +179,8 @@ class DetailsFeedComponent extends Component {
               
     
 
-    </Content>
-</Container>
+    </View>
+</View>
         )
     }
 }
